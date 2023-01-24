@@ -1,6 +1,7 @@
+//https://github.com/IgorKilipenko/ublox_esp_ble_uart/blob/main/src/main.cpp
 //#include <Arduino.h>
-#include <header.h>
-#include <queue>
+#include "header.h"
+#include "queue"
 #include "BluetoothSerial.h"
 
 HardwareSerial *RTCM{&Serial1};
@@ -115,7 +116,7 @@ void setup()
 {
     Serial.begin(BAUD_SERIAL);
 
-    SerialBT.begin("ESP32test"); // Bluetooth device name
+    SerialBT.begin("RoveF9pESP32"); // Bluetooth device name
     Serial.println("The device started, now you can pair it with bluetooth!");
 
     Receiver->setRxBufferSize(RX_BUFFER_SIZE);
@@ -123,22 +124,28 @@ void setup()
     Receiver->onReceiveError(receiveErrorFnc);
     // Receiver->setRxTimeout(1);
 
-    Receiver->begin(BAUND_RECEIVER, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
+    Receiver->begin(115200, SERIAL_8N1, 16, 17 /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
+    // Receiver->begin(BAUND_RECEIVER, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
+
     // delay(500);
+  
     unsigned long detectedBaudRate = Receiver->baudRate();
     if (detectedBaudRate)
         log_d("Receiver uart baudrate detecyed -> [ %lu ]", detectedBaudRate);
     else
     {
         log_w("Receiver baudrate not detected");
-        Receiver->begin(BAUD_SERIAL, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, SERIAL_SIZE_RX*/);
+        Receiver->begin(115200, SERIAL_8N1, 16, 17 /*, false, 20000UL, SERIAL_SIZE_RX*/);
+        // Receiver->begin(BAUD_SERIAL, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, SERIAL_SIZE_RX*/);
+
     }
 
     RTCM->setRxBufferSize(RX_BUFFER_SIZE);
     RTCM->onReceive(onRtcmReceiveCb, false);
     RTCM->onReceiveError(receiveErrorFnc);
 
-    RTCM->begin(38400, SERIAL_8N1, RXD1, TXD1);
+    // RTCM->begin(115200, SERIAL_8N1, 16, 17);
+    // RTCM->begin(115200, SERIAL_8N1, RXD1, TXD1);
 }
 
 void loop()

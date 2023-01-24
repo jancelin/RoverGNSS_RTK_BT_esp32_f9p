@@ -22,16 +22,25 @@
 #ifdef ESP32
 #ifdef TTGO_BOARD
 #define CS_PIN 13
-#define RXD2 32
-#define TXD2 33
-#define RXD1 13
-#define TXD1 23
+// #define RXD2 32
+// #define TXD2 33
+#define RXD2 16
+#define TXD2 17
+
+// #define RXD1 13
+// #define TXD1 23
+#define RXD1 16
+#define TXD1 17
+
 #else
 #define CS_PIN 5 // SD card cs_pin (default D5 GPIO5 on ESP32 DevkitV1)
 #define RXD2 16
 #define TXD2 17
-#define RXD1 4
-#define TXD1 15
+// #define RXD1 4
+// #define TXD1 15
+#define RXD1 16
+#define TXD1 17
+
 #endif // TTGO_BOARD
 #else
 #error Platform not supported
