@@ -5,6 +5,7 @@
 1. **F9P Drotek Mpcie:**
    - [Lien Produit](https://store-drotek.com/923-DP0602.html)
    - [Fiche Technique](https://raw.githubusercontent.com/drotek/datasheets/master/DrotekDoc_0923%20-%20DP0602%20(mPCIe%20F9P).pdf)
+   - ![image](https://github.com/jancelin/RoverGNSS_RTK_BT_esp32_f9p/assets/6421175/bc562449-4c93-4c96-ac31-dea995517e41)
 
 2. **F9P Ardusimple Mpcie:**
    - [Lien Produit](https://www.ardusimple.com/product/simplertk2b-mpcie-zed-f9p/)
@@ -12,7 +13,8 @@
 
 3. **Mosaic X5 Ardusimple Mpcie:**
    - [Lien Produit](https://www.ardusimple.com/product/simplertk3b-mpcie-septentrio-mosaic/)
-   - Référence : Documentation envoyée séparément
+   - ![image](https://github.com/jancelin/RoverGNSS_RTK_BT_esp32_f9p/assets/6421175/18602417-c3d7-48cf-a976-15696fe26927)
+
 
 ## Référence des Pinouts des Cartes GNSS en Mpcie
 
