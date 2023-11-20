@@ -141,6 +141,7 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 - Antenne GNSS: Connectique SMA F90 to IPEX-1 F, blindée, longueur à adapter en fonction du modèle 3D de la boîte (environ 5-10 cm)
 - Exemple de montage ports data supplémentaires [Voir ici](https://www.seeedstudio.com/Grove-Shield-for-Seeeduino-XIAO-p-4621.html)
 - Modèle 3D, impression
+- Intégration module 4g
 
 ### Branchement
 
@@ -174,3 +175,4 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 | **SDA**         | ----->| -           |---->  | **SDA**|
 
 > TODO rajouter SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
+> TODO ou brancher un récepteur 4G?
