@@ -175,4 +175,5 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 | **SDA**         | ----->| -           |---->  | **SDA**|
 
 > TODO rajouter SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
+
 > TODO ou brancher un récepteur 4G?
