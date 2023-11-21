@@ -65,6 +65,10 @@
   - 16 UART1 Rx ESP32 -> UART1 17 Tx Drotek F9P
   - 17 UART1 Tx ESP32 -> UART1 19 Rx Drotek F9P
 
+- **F9p-ntrip-esp32** ([Lien GitHub](https://github.com/buched/F9p-ntrip-esp32))
+  - 17 UART1 Rx ESP32 -> UART1 17 Tx Drotek F9P
+  - 23 VSPI_MOSI ESP32 -> UART1 19 Rx Drotek F9P
+
 ...
 
 ## Possibilités
