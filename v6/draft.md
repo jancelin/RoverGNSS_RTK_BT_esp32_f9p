@@ -151,14 +151,15 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
 ### Branchement
 
-| ESP32 WROOM           |                        | Mpcie GNSS       |
-|-----------------------|------------------------|----------------------|
-| **01 UART0 Tx**          | ---------------------> | **Pin 36 (USB_DATA-)**|
-| **03 UART0 Rx**          | <--------------------- | **Pin 38 (USB_DATA+)**|
-| **16 UART1 Rx**          | ---------------------> | **Pin 45**            |
-| **17 UART1 Tx**          | <--------------------- | **Pin 47**            |
-| **22 I2C SCL Tx**          | ---------------------> | **Pin 19**            |
-| **23 SPI VSPI_MOSI Rx**          | <--------------------- | **Pin 17**            |
+| ESP32 WROOM           |                        | Mpcie GNSS       ||
+|-----------------------|------------------------|----------------------|-|
+| **01 UART0 Tx**          | ---------------------> | **Pin 36 (USB_DATA-)**||
+| **03 UART0 Rx**          | <--------------------- | **Pin 38 (USB_DATA+)**||
+| **16 UART1 Rx**          | ---------------------> | **Pin 45**            ||
+| **17 UART1 Tx**          | <--------------------- | **Pin 47**            ||
+| **22 (UART2)Tx I2C SCL**          | ---------------------> | **Pin 19**            |#include <HardwareSerial.h> |
+| **23 (UART2)Rx SPI VSPI_MOSI**          | <--------------------- | **Pin 17**            |#include <HardwareSerial.h> |
+
 
 > TODO Est il possible d'inverser tx rx dans les codes arduino sur 16-17 esp32 pour adptation mosaic X5, a vérifier.
 
