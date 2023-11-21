@@ -46,7 +46,7 @@
    - 49 COM1 Rx
    - 51 COM1 Tx
 
-## Microcontrôleur ESP32 VROOM
+## Microcontrôleur ESP32 WROOM
 
 - [Pinout Joy-It SBC-NodeMCU-ESP32](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32)-Manual-2021-06-29.pdf
 
@@ -129,13 +129,15 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 - **Pin 17 UART1 Rx** -> **Pin 47**
   - UART2 Rx (Entrée - Drotek)
   - COM3 Tx (Sortie - Ardusimple MosaicX5)
+ 
+- **Pin 22 VSPI_MOSI Rx** -> 
 
 ### Objectifs Supplémentaires
 
 - Rendre accessible ESP32 UART1-GNSS 45/47 + SCL/SDA en connectique à souder
 - Rendre accessible alimentation 3.3V/VIN+GND en connectique à souder
 - Switch pour paramétrage USB (UART0) vers ESP32 ou récepteur GNSS
-- Microcontrôleur ESP32 VROOM pour Bluetooth classique
+- Microcontrôleur ESP32 WROOM pour Bluetooth classique
 - Charge batterie connexion USB
 - Batterie 2000mAh
 - connecteur batterie standard 2mm
@@ -149,12 +151,14 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
 ### Branchement
 
-| ESP32 VROOM           |                        | Mpcie GNSS       |
+| ESP32 WROOM           |                        | Mpcie GNSS       |
 |-----------------------|------------------------|----------------------|
 | **01 UART0 Tx**          | ---------------------> | **Pin 36 (USB_DATA-)**|
 | **03 UART0 Rx**          | <--------------------- | **Pin 38 (USB_DATA+)**|
 | **16 UART1 Rx**          | ---------------------> | **Pin 45**            |
 | **17 UART1 Tx**          | <--------------------- | **Pin 47**            |
+| **22 I2C SCL Tx**          | ---------------------> | **Pin 19**            |
+| **23 SPI VSPI_MOSI Rx**          | <--------------------- | **Pin 17**            |
 
 > TODO Est il possible d'inverser tx rx dans les codes arduino sur 16-17 esp32 pour adptation mosaic X5, a vérifier.
 
@@ -162,22 +166,21 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
  exemple de connexion avec f9p Drotek ou mosaic x5 ardusimple AS
 
-| ESP32 VROOM     | Piste| Mpcie GNSS             | Piste       | Pin à Souder  |
+| ESP32 WROOM     | Piste| Mpcie GNSS             | Piste       | Pin à Souder  |
 |-----------------|------|------------------------|-------------|---------------|
 | **01 UART0 Tx** | ---->| **Pin 36 USB_DATA-**   | -       |  -            |
 | **03 UART0 Rx** | <----| **Pin 38 USB_DATA+**   | -       |  -            |
-| **16 UART1 Rx** | ---->| **Pin 45 UART2 Tx Drotek / COM3 Rx AS)** | ----> | **1**             |
-| **17 UART1 Tx** | <----| **Pin 47 UART2 Rx Drotek / COM3 Tx AS)** | ----> | **2**             |
-| -               | -    | **Pin 17 UART1 Tx Drotek / Extint AS**   | ----> | **3**             |
-| -               | -    | **Pin 19 UART1 Rx Drotek / Timepulse AS**| ----> | **4**             |
+| **16 UART1 Rx** | ---->| **Pin 45 UART2 Tx Drotek / COM3 Rx AS** | ----> | **1**             |
+| **17 UART1 Tx** | <----| **Pin 47 UART2 Rx Drotek / COM3 Tx AS** | ----> | **2**             |          |        |
 | -               | -    | **Pin 49 Extint Drotek / COM1 Rx AS**    | ----> | **5**             |
 | -               | -    | **Pin 51 Timepulse Drotek / COM1 Tx AS** | ----> | **6**             |
 | **GND**         | ----->| **Pin 4 GND**           |---->  | **GND**|
-  **3V3**         | ----->| **Pin 2 3V3**           |---->  | **3V3**|
+|  **3V3**        | ----->| **Pin 2 3V3**           |---->  | **3V3**|
 | **VIN**         | ----->| -           |---->  | **VIN**|
-| **SCL**         | ----->| -           |---->  | **SCL**|
-| **SDA**         | ----->| -           |---->  | **SDA**|
+| **21 I2C SDA**         | ----->| -           |---->  | **SDA**|
+| **22 I2C SCL**         | ----->| **Pin 19 UART1 Rx Drotek / Timepulse AS**     |---->  | **SCL**|
+| **23 SPI VSPI_MOSI**   |----->|  **Pin 17 UART1 Tx Drotek / Extint AS**        |---->  | **VSPI_MOSI**|
 
-> TODO rajouter SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
+> TODO rajouter tout SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
 
 > TODO ou brancher un récepteur 4G?
