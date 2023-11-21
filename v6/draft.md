@@ -172,8 +172,8 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 | **03 UART0 Rx** | <----| **Pin 38 USB_DATA+**   | -       |  -            |
 | **16 UART1 Rx** | ---->| **Pin 45 UART2 Tx Drotek / COM3 Rx AS** | ----> | **1**             |
 | **17 UART1 Tx** | <----| **Pin 47 UART2 Rx Drotek / COM3 Tx AS** | ----> | **2**             |          |        |
-| -               | -    | **Pin 49 Extint Drotek / COM1 Rx AS**    | ----> | **5**             |
-| -               | -    | **Pin 51 Timepulse Drotek / COM1 Tx AS** | ----> | **6**             |
+| -               | -    | **Pin 49 Extint Drotek / COM1 Rx AS**    | ----> | **3**             |
+| -               | -    | **Pin 51 Timepulse Drotek / COM1 Tx AS** | ----> | **4**             |
 | **GND**         | ----->| **Pin 4 GND**           |---->  | **GND**|
 |  **3V3**        | ----->| **Pin 2 3V3**           |---->  | **3V3**|
 | **VIN**         | ----->| -           |---->  | **VIN**|
