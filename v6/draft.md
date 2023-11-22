@@ -172,3 +172,20 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 > TODO rajouter tout SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
 
 > TODO ou brancher un récepteur 4G?
+
+```mermaid
+graph TD;
+    Esp32_01-->Mpcie_36;
+    Esp32_03-->Mpcie_38;
+    Esp32_16-->Mpcie_45-->1;
+    Esp32_17-->Mpcie_47-->2;
+    Esp32_19-->Mpcie_17-->3;
+    Esp32_19-->Mpcie_49-->4;
+    Esp32_23-->Mpcie_19-->5;
+    Esp32_23-->Mpcie_51-->6;
+    Esp32_SDA-->*-->SDA;
+    Esp32_SCL-->*-->SCL;
+    Esp32_GND-->Mpcie_GND-->GND;
+    Esp32_3V3-->Mpcie_3V3-->3V3;
+    Esp32_VIN-->*-->VIN;
+```
