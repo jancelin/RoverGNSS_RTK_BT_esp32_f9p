@@ -173,6 +173,8 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
 > TODO ou brancher un récepteur 4G?
 
+### Schéma Branchement
+
 ```mermaid
 graph TD;
     Esp32_01-->Mpcie_36;
