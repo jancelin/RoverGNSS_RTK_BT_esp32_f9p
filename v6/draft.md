@@ -153,21 +153,21 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
  exemple de connexion avec f9p Drotek ou mosaic x5 ardusimple AS
  
-| ESP32 WROOM| FONCTION             | Piste       | Mpcie GNSS| FONCTION                          | Piste | Pin à Souder  | Commentaires              |
-|:----------:|:--------------------:|:-----------:|:---------:|:---------------------------------:|:-----:|:-------------:|:-------------------------:|
-| **01**| **UART0 Tx**              | ----------->| **36**| **USB_DATA-**                     | -     |  -            |                           |
-| **03**| **UART0 Rx**              | <-----------| **38**| **USB_DATA+**                     | -     |  -            |                           |
-| **16**| **UART1 Rx**              | <-----------| **45**| **UART2 Tx Drotek / COM3 Rx AS**  |<----- | **1**         |                           |
-| **17**| **UART1 Tx**              | ----------->| **47**| **UART2 Rx Drotek / COM3 Tx AS**  |-----> | **2**         |                           |
-| **19**| **UART2 Rx SPI VSPI_MISC**| <-----jumper| **17**| **UART1 Tx Drotek / Extint AS**   |<----- | **VSPI_MISC** |#include <HardwareSerial.h>|
-| **19**|                           | <-----jumper| **49**| **Extint Drotek / COM1 Rx AS**    |-----> | **3**         |                           |
-| **23**| **UART2 Tx SPI VSPI_MOSI**| ----->jumper| **19**| **UART1 Rx Drotek / Timepulse AS**|-----> | **VSPI_MOSI** |#include <HardwareSerial.h>|
-| **23**|                           | ----->jumper| **51**| **Timepulse Drotek / COM1 Tx AS** |-----> | **4**         |                           |
-| **21**| **I2C SDA**               | <-----------|-------|-----------------------------------|-----> | **SDA**       |                           |
-| **22**| **I2C SCL**               | <-----------|-------|-----------------------------------|-----> | **SCL**       |                           |
-|**GND**| <-------------------------| ----------> | **4** | **GND**                           |-----> | **GND**       |                           |
-|**3V3**| <-------------------------| ----------> | **2** | **3V3**                           |-----> | **3V3**       |                           |
-|**VIN**| <-------------------------| ------------|-------|-----------------------------------|-----> | **VIN**       |                           |
+| ESP32 WROOM| FONCTION             | Piste       | Mpcie GNSS| FONCTION                      | Piste | à Souder| Commentaires              |
+|:----------:|:--------------------:|:-----------:|:---------:|:-----------------------------:|:-----:|:-------:|:-------------------------:|
+| **01**| **UART0 Tx**              | ----------->| **36**| **USB_DATA-**                     | -     |  -      |                           |
+| **03**| **UART0 Rx**              | <-----------| **38**| **USB_DATA+**                     | -     |  -      |                           |
+| **16**| **UART1 Rx**              | <-----------| **45**| **UART2 Tx Drotek / COM3 Rx AS**  |<----- | **1**   |                           |
+| **17**| **UART1 Tx**              | ----------->| **47**| **UART2 Rx Drotek / COM3 Tx AS**  |-----> | **2**   |                           |
+| **19**| **UART2 Rx SPI VSPI_MISC**| <-----jumper| **17**| **UART1 Tx Drotek / Extint AS**   |<----- | **3**   |#include <HardwareSerial.h>|
+| **19**|                           | <-----jumper| **49**| **Extint Drotek / COM1 Rx AS**    |-----> | **4**   |                           |
+| **23**| **UART2 Tx SPI VSPI_MOSI**| ----->jumper| **19**| **UART1 Rx Drotek / Timepulse AS**|-----> | **5**   |#include <HardwareSerial.h>|
+| **23**|                           | ----->jumper| **51**| **Timepulse Drotek / COM1 Tx AS** |-----> | **6**   |                           |
+| **21**| **I2C SDA**               | <-----------|-------|-----------------------------------|-----> | **SDA** |                           |
+| **22**| **I2C SCL**               | <-----------|-------|-----------------------------------|-----> | **SCL** |                           |
+|**GND**| <-------------------------| ----------> | **4** | **GND**                           |-----> | **GND** |                           |
+|**3V3**| <-------------------------| ----------> | **2** | **3V3**                           |-----> | **3V3** |                           |
+|**VIN**| <-------------------------| ------------|-------|-----------------------------------|-----> | **VIN** |                           |
 
 > TODO rajouter tout SPI? https://randomnerdtutorials.com/esp32-microsd-card-arduino/
 
