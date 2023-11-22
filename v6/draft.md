@@ -183,9 +183,9 @@ graph TD;
     Esp32_19-->Mpcie_49-->4;
     Esp32_23-->Mpcie_19-->5;
     Esp32_23-->Mpcie_51-->6;
-    Esp32_SDA-->*-->SDA;
-    Esp32_SCL-->*-->SCL;
+    Esp32_SDA-->SDA;
+    Esp32_SCL-->SCL;
     Esp32_GND-->Mpcie_GND-->GND;
     Esp32_3V3-->Mpcie_3V3-->3V3;
-    Esp32_VIN-->*-->VIN;
+    Esp32_VIN-->VIN;
 ```
