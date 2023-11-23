@@ -198,10 +198,18 @@ flowchart LR
     07[Esp32_SDA] --> 47[*pin SDA]
     08[Esp32_SCL] --> 48[*pin_SCL]
     80{USB} -->|Data| 81{switch}
-    81 -->|UART0 Tx| 01[Esp32_01]
-    81 -->|USB_DATA-| 21[Mpcie_36]
-    81 -->|UART0 Rx| 02[Esp32_03]
     81 -->|USB_DATA+| 22[Mpcie_38]
+    81 -->|USB_DATA-| 21[Mpcie_36]
+    81 -->|UART0 Tx| 01[Esp32_01]
+    81 -->|UART0 Rx| 02[Esp32_03]
+    100[ESP32] --> 01
+    100 --> 02
+    100 --> 03
+    100 --> 04
+    100 --> 05
+    100 --> 06
+    100 --> 07
+    100 --> 08
 ```
 
 ```mermaid
