@@ -210,6 +210,8 @@ flowchart LR
     100 --> 06
     100 --> 07
     100 --> 08
+    100 -->|analogique| 30[Esp32_34]
+    30 --> 49[*pin D34]
 ```
 
 ```mermaid
