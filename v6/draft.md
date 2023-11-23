@@ -179,30 +179,34 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 ### Schéma Branchement
 
 ```mermaid
-flowchart TD
+flowchart LR
     01[Esp32_01] --> 21[Mpcie_36]
     02[Esp32_03] --> 22[Mpcie_38]
     03[Esp32_16] --> 23[Mpcie_45]
-    23 --> 41[pin 1]
+    23 --> 41[*pin 1]
     04[Esp32_17] --> 24[Mpcie_47]
-    24 --> 42[pin 2]
+    24 --> 42[*pin 2]
     05[Esp32_19] --> 60{Jumper_1}
     60 --> 25[Mpcie_17]
     60 --> 26[Mpcie_49]
-    25 --> 43[pin 3]
-    26 --> 44[pin 4]
+    25 --> 43[*pin 3]
+    26 --> 44[*pin 4]
     06[Esp32 23] --> 62{Jumper_2}
     62 --> 27[Mpcie_19]
     62 --> 28[Mpcie_51]
-    27 --> 45[pin 5]
-    28 --> 46[pin 6]
+    27 --> 45[*pin 5]
+    28 --> 46[*pin 6]
     07[Esp32_SDA] --> 47[pin SDA]
     08[Esp32_SCL] --> 48[pin_SCL]
     09[Esp32_GND] --> 29[Mpcie_GND]
-    29 --> 49[pin GND]
+    29 --> 49[*pin GND]
     9[Esp32_3V3] --> 30[Mpcie_3V3]
-    30 --> 50[pin_3V3]
-    10[Esp32_VIN] --> 51[pin VIN]
+    30 --> 50[*pin 3V3]
+    10[Esp32_VIN] --> 51[*pin VIN]
+    70[5V] --> 10
+    71[GND] --> 09
+    72[3v3] --> 9
+
 ```
 
 
