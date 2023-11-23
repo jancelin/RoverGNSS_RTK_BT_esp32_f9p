@@ -195,8 +195,8 @@ flowchart LR
     62 --> 28[Mpcie_51]
     27 --> 45[*pin 5]
     28 --> 46[*pin 6]
-    07[Esp32_SDA] --> 47[pin SDA]
-    08[Esp32_SCL] --> 48[pin_SCL]
+    07[Esp32_SDA] --> 47[*pin SDA]
+    08[Esp32_SCL] --> 48[*pin_SCL]
     80{USB} -->|Data| 81{switch}
     81 -->|UART0 Tx| 01[Esp32_01]
     81 -->|USB_DATA-| 21[Mpcie_36]
