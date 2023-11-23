@@ -48,7 +48,10 @@
 
 ## Microcontrôleur ESP32 WROOM
 
-- [Pinout Joy-It SBC-NodeMCU-ESP32](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32)-Manual-2021-06-29.pdf
+- [Pinout Joy-It SBC-NodeMCU-ESP32](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-2021-06-29.pdf)
+
+  ![image](https://github.com/jancelin/RoverGNSS_RTK_BT_esp32_f9p/assets/6421175/8c0e1e21-467d-4e64-9869-d3256f4bad83)
+
 
 ## Connexion ESP32 -> F9P Drotek
 
@@ -181,10 +184,12 @@ graph TD;
     Esp32_03-->Mpcie_38;
     Esp32_16-->Mpcie_45-->1;
     Esp32_17-->Mpcie_47-->2;
-    Esp32_19-->Mpcie_17-->3;
-    Esp32_19-->Mpcie_49-->4;
-    Esp32_23-->Mpcie_19-->5;
-    Esp32_23-->Mpcie_51-->6;
+    Esp32_19-->Jumper_1;
+    Jumper_1-->Mpcie_17-->3;
+    Jumper_1-->Mpcie_49-->4;
+    Esp32_23-->Jumper_2
+    Jumper_2-->Mpcie_19-->5;
+    Jumper_2-->Mpcie_51-->6;
     Esp32_SDA-->SDA;
     Esp32_SCL-->SCL;
     Esp32_GND-->Mpcie_GND-->GND;
