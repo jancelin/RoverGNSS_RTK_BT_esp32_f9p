@@ -180,18 +180,29 @@ Offrir le plus de possibilités de connexion entre l'ESP32, le récepteur GNSS, 
 
 ```mermaid
 flowchart LR
-    01[Esp32_01] --> 21[Mpcie_36]
-    02[Esp32_03] --> 22[Mpcie_38]
-    03[Esp32_16] --> 23[Mpcie_45]
+    00{ESP32}
+    00 --> 01
+    00 --> 02
+    00 --> 03
+    00 --> 04
+    00 --> 05
+    00 --> 06
+    00 --> 07
+    00 --> 08
+    00 --> 09
+    00 --> 10
+    01[Esp32_01] -->|UART0 Tx| 21[Mpcie_36]
+    02[Esp32_03] -->|UART0 Rx| 22[Mpcie_38]
+    03[Esp32_16] -->|UART1 Rx| 23[Mpcie_45]
     23 --> 41[*pin 1]
-    04[Esp32_17] --> 24[Mpcie_47]
+    04[Esp32_17] -->|UART1 Tx| 24[Mpcie_47]
     24 --> 42[*pin 2]
-    05[Esp32_19] --> 60{Jumper_1}
+    05[Esp32_19] -->|UART2 Rx| 60{Jumper_1}
     60 --> 25[Mpcie_17]
     60 --> 26[Mpcie_49]
     25 --> 43[*pin 3]
     26 --> 44[*pin 4]
-    06[Esp32 23] --> 62{Jumper_2}
+    06[Esp32 23] -->|UART2 Tx| 62{Jumper_2}
     62 --> 27[Mpcie_19]
     62 --> 28[Mpcie_51]
     27 --> 45[*pin 5]
@@ -200,12 +211,17 @@ flowchart LR
     08[Esp32_SCL] --> 48[pin_SCL]
     09[Esp32_GND] --> 29[Mpcie_GND]
     29 --> 49[*pin GND]
-    9[Esp32_3V3] --> 30[Mpcie_3V3]
+    10[Esp32_3V3] --> 30[Mpcie_3V3]
     30 --> 50[*pin 3V3]
-    10[Esp32_VIN] --> 51[*pin VIN]
-    70[5V] --> 10
-    71[GND] --> 09
-    72[3v3] --> 9
+    11[Esp32_VIN] --> 51[*pin VIN]
+    70{Alimentation}
+    70 --> 71
+    70 --> 72
+    70 --> 73
+    71[5V] --> 11
+    72[GND] --> 09
+    73[3v3] --> 10
+    
 
 ```
 
