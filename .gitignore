@@ -3,3 +3,6 @@
 #.vscode/c_cpp_properties.json
 #.vscode/launch.json
 .vscode/ipch
+v6/PROJET_KICAD/centipede-backups/*
+*.DS_Store
+*fp-info-cache
