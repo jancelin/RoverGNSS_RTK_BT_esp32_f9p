@@ -4,6 +4,11 @@
 #include "queue"
 #include "BluetoothSerial.h"
 
+/* CONFIG for UART1 */
+#define PIN_TX 26
+#define PIN_RX 27 
+#define POWER_PIN 25
+
 HardwareSerial *RTCM{&Serial1};
 HardwareSerial *Receiver{&Serial2};
 
@@ -116,7 +121,11 @@ void setup()
 {
     Serial.begin(BAUD_SERIAL);
 
-    SerialBT.begin("RoveF9pESP32"); // Bluetooth device name
+    // POWER_PIN : This pin controls the power supply of the MICRO PCI card
+    pinMode(POWER_PIN, OUTPUT);
+    digitalWrite(POWER_PIN, HIGH);
+
+    SerialBT.begin("RoveF9pESP32_ROM"); // Bluetooth device name
     Serial.println("The device started, now you can pair it with bluetooth!");
 
     Receiver->setRxBufferSize(RX_BUFFER_SIZE);
@@ -124,7 +133,7 @@ void setup()
     Receiver->onReceiveError(receiveErrorFnc);
     // Receiver->setRxTimeout(1);
 
-    Receiver->begin(115200, SERIAL_8N1, 16, 17 /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
+    Receiver->begin(115200, SERIAL_8N1, PIN_RX, PIN_TX /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
     // Receiver->begin(BAUND_RECEIVER, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, static_cast<uint8_t>(SERIAL_SIZE_RX)*/);
 
     // delay(500);
@@ -135,7 +144,7 @@ void setup()
     else
     {
         log_w("Receiver baudrate not detected");
-        Receiver->begin(115200, SERIAL_8N1, 16, 17 /*, false, 20000UL, SERIAL_SIZE_RX*/);
+        Receiver->begin(115200, SERIAL_8N1, PIN_RX, PIN_TX /*, false, 20000UL, SERIAL_SIZE_RX*/);
         // Receiver->begin(BAUD_SERIAL, SERIAL_8N1, RXD2, TXD2 /*, false, 20000UL, SERIAL_SIZE_RX*/);
 
     }
@@ -150,6 +159,8 @@ void setup()
 
 void loop()
 {
+
+
     if (SerialBT.hasClient())
     {
         const size_t bufferSize = buffer.size();
