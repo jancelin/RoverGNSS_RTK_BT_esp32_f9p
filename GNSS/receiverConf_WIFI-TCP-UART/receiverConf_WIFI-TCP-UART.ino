@@ -1,8 +1,13 @@
+/* ***************************************************************************************************/
+/* Code to push to ESP to update firmware over Wifi 
+/* Manage connection from U-Center to DP0602 RTK GNSS (mPCIe F9P)*/
+/*
+/* Author : Julien Ancelin 
+/* ***************************************************************************************************/
 #include <WiFi.h>
   
 // debug log, set to 1 to enable
 #define ENABLE_DEBUG_LOG 1
-
 #define POWER_PIN 25
 
 // wifi config
@@ -38,7 +43,7 @@ void debug_log(char* str) {
   
 void setup() {
 
-    // POWER_PIN : This pin controls the power supply of the SIM7600
+    // POWER_PIN : This pin controls the power supply of the MicroPCI
   pinMode(POWER_PIN, OUTPUT);
   digitalWrite(POWER_PIN, HIGH);
 
