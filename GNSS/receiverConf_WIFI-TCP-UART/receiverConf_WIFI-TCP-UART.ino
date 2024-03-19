@@ -56,11 +56,9 @@ while (WiFi.status() != WL_CONNECTED) {
        delay(500);
 }
   
-#if ENABLE_DEBUG_LOG == 1
-   Serial.println("connected to WiFi");
-   Serial.println("IP adddr: ");
-   Serial.println(WiFi.localIP());
-#endif
+   debug_log("connected to WiFi");
+   debug_log("IP adddr: ");
+   debug_log((String)WiFi.localIP());
    delay(1000);
   
 //start server
