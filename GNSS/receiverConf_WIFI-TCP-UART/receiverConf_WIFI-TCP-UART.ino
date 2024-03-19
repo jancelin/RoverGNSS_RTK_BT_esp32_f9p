@@ -2,7 +2,9 @@
   
 // debug log, set to 1 to enable
 #define ENABLE_DEBUG_LOG 1
-  
+
+#define POWER_PIN 25
+
 // wifi config
 const char* ssid     = "SSID-NAME";
 const char* password = "SSID-PSWD";
@@ -37,8 +39,8 @@ void debug_log(char* str) {
 void setup() {
 
     // POWER_PIN : This pin controls the power supply of the SIM7600
-  pinMode(25, OUTPUT);
-  digitalWrite(25, HIGH);
+  pinMode(POWER_PIN, OUTPUT);
+  digitalWrite(POWER_PIN, HIGH);
 
 // init rs port
    Serial.begin(baudrate, rs_config);
